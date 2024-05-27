@@ -15,7 +15,8 @@
 4. **Screenshots or GIFs**:
 
    - Include screenshots or GIFs demonstrating the website's functionality.
-   - Screenshot [Quiz]() .
+   - Screenshot [Quiz](./Screenshot%202024-05-27%20at%2022.23.50.jpg)
+   - Screenshot [Quiz](./Screenshot%202024-05-27%20at%2022.23.56.jpg)
 
 5. **Customization**
 
@@ -36,7 +37,7 @@ const questions = [
 ]
 ```
 
-6. **For inspiration, you can check out existing project repositories on my GitHub:**
+6. **For inspiration, you can check out my Other project repositories on my GitHub:**
 
 - [Weather app](https://github.com/Rahulboro/wether-app): This project is a weather application built by myself. It provides weather information to users based on their location input. The app utilizes an external API to fetch weather data.
 - [Sign Up](https://github.com/Rahulboro/reactjs-signup-form): This project demonstrates a robust and user-friendly authentication system, leveraging modern web development practices.
