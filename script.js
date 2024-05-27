@@ -79,11 +79,11 @@ showQuestion = () => {
     let button = document.createElement("button");
     button.innerHTML = answer.text;
     button.classList.add("ans-btn");
-      divAns.appendChild(button);
-      if (answer.correct) {
-        button.dataset.correct = answer.correct;
-      }
-      button.addEventListener("click" selectAnswer)
+    divAns.appendChild(button);
+    if (answer.correct) {
+      button.dataset.correct = answer.correct;
+    }
+    button.addEventListener("click", selectAnswer);
   });
 };
 resetAnswer = () => {
@@ -92,8 +92,21 @@ resetAnswer = () => {
     divAns.removeChild(divAns.firstChild);
   }
 };
-selectAnswer = (e) => { 
+
+selectAnswer = (e) => {
   const selectedBtn = e.target;
-  const correct = selectedBtn.dataset.correct;
-}
+  const isCorrect = selectedBtn.dataset.correct === "true";
+  if (isCorrect) {
+    selectedBtn.classList.add("correct");
+  } else {
+    selectedBtn.classList.add("incorrect");
+  }
+  Array.from(divAns.children).forEach((button) => {
+    if (button.dataset.correct === "true") {
+      button.classList.add("correct");
+    }
+    button.disabled = true;
+  });
+  nextbtn.style.display = "block";
+};
 quizStart();
