@@ -15,8 +15,8 @@
 4. **Screenshots or GIFs**:
 
    - Include screenshots or GIFs demonstrating the website's functionality.
-   - Screenshot [Quiz](./Screenshot%202024-05-27%20at%2022.23.50.jpg)
-   - Screenshot [Quiz](./Screenshot%202024-05-27%20at%2022.23.56.jpg)
+   - Screenshot ![Quiz](./Screenshot%202024-05-27%20at%2022.23.50.jpg)
+   - Screenshot ![Quiz](./Screenshot%202024-05-27%20at%2022.23.56.jpg)
 
 5. **Customization**
 
