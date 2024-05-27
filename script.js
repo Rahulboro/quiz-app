@@ -18,39 +18,41 @@ const questions = [
     ],
   },
   {
-    question: "What is the capital of France?",
+    question:
+      " Who sang the title song for the latest Bond film, No Time to Die?",
     answers: [
-      { text: "Paris", correct: true },
-      { text: "Berlin", correct: false },
-      { text: "Canberra", correct: false },
+      { text: "Adele", correct: false },
+      { text: "Sam Smith", correct: false },
+      { text: "Billie Eilish", correct: true },
+      { text: "akon", correct: false },
+    ],
+  },
+  {
+    question:
+      "Which flies a green, white, and orange (in that order) tricolor flag?",
+    answers: [
+      { text: "Ireland", correct: true },
+      { text: "Ivory Coast", correct: false },
+      { text: "Italy", correct: false },
       { text: "Delhi", correct: false },
     ],
   },
   {
-    question: "What is the capital of France?",
+    question: "What company makes the Xperia model of smartphone?",
     answers: [
-      { text: "Paris", correct: true },
-      { text: "Berlin", correct: false },
-      { text: "Canberra", correct: false },
-      { text: "Delhi", correct: false },
+      { text: "Samsung", correct: false },
+      { text: "Sony", correct: true },
+      { text: "Nokia", correct: false },
+      { text: "htc", correct: false },
     ],
   },
   {
-    question: "What is the capital of France?",
+    question: "Which city is home to the Brandenburg Gate?",
     answers: [
-      { text: "Paris", correct: true },
-      { text: "Berlin", correct: false },
+      { text: "Vienna", correct: false },
+      { text: "Zurich", correct: false },
       { text: "Canberra", correct: false },
-      { text: "Delhi", correct: false },
-    ],
-  },
-  {
-    question: "What is the capital of France?",
-    answers: [
-      { text: "Paris", correct: true },
-      { text: "Berlin", correct: false },
-      { text: "Canberra", correct: false },
-      { text: "Delhi", correct: false },
+      { text: "Berlin", correct: true },
     ],
   },
 ];
@@ -98,6 +100,7 @@ selectAnswer = (e) => {
   const isCorrect = selectedBtn.dataset.correct === "true";
   if (isCorrect) {
     selectedBtn.classList.add("correct");
+    score++;
   } else {
     selectedBtn.classList.add("incorrect");
   }
@@ -109,4 +112,25 @@ selectAnswer = (e) => {
   });
   nextbtn.style.display = "block";
 };
+showScore = () => {
+  resetAnswer();
+  questiondiv.innerHTML = `You Scored ${score} out of ${questions.length}`;
+  nextbtn.innerHTML = "Restart";
+  nextbtn.style.display = "block";
+};
+handleNextButton = () => {
+  currentquestionIndex++;
+  if (currentquestionIndex < questions.length) {
+    showQuestion();
+  } else {
+    showScore();
+  }
+};
+nextbtn.addEventListener("click", () => {
+  if (currentquestionIndex < questions.length) {
+    handleNextButton();
+  } else {
+    quizStart();
+  }
+});
 quizStart();
